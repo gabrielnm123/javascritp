@@ -1,8 +1,14 @@
+# Exemplos javascript
+
+## Métodos Arrays
+
 ### 1. **Métodos de Verificação e Busca**
+
 Estes métodos são usados para encontrar elementos específicos ou verificar certas condições.
 
 - **`includes()`**:
   - Verifica se um valor específico está presente no array.
+
   ```javascript
   const fruits = ['apple', 'banana', 'mango'];
   console.log(fruits.includes('banana')); // true
@@ -10,6 +16,7 @@ Estes métodos são usados para encontrar elementos específicos ou verificar ce
 
 - **`some()`**:
   - Retorna `true` se **pelo menos um** dos elementos do array atender à condição especificada.
+
   ```javascript
   const numbers = [1, 3, 5, 8];
   console.log(numbers.some(num => num > 5)); // true
@@ -17,12 +24,14 @@ Estes métodos são usados para encontrar elementos específicos ou verificar ce
 
 - **`every()`**:
   - Retorna `true` se **todos** os elementos do array atenderem à condição especificada.
+
   ```javascript
   console.log(numbers.every(num => num > 0)); // true
   ```
 
 - **`find()`**:
   - Retorna o **primeiro elemento** do array que satisfaz a condição fornecida.
+
   ```javascript
   const users = [{name: 'John'}, {name: 'Jane'}, {name: 'Jack'}];
   const foundUser = users.find(user => user.name === 'Jane');
@@ -31,16 +40,19 @@ Estes métodos são usados para encontrar elementos específicos ou verificar ce
 
 - **`findIndex()`**:
   - Retorna o **índice do primeiro elemento** que satisfaz a condição fornecida.
+
   ```javascript
   const foundIndex = users.findIndex(user => user.name === 'Jane');
   console.log(foundIndex); // 1
   ```
 
 ### 2. **Métodos de Transformação e Modificação**
+
 Estes métodos são usados para alterar elementos no array ou criar novos arrays transformados.
 
 - **`map()`**:
   - Cria um **novo array** aplicando uma função a cada elemento do array original.
+
   ```javascript
   const numbers = [1, 2, 3];
   const doubled = numbers.map(num => num * 2);
@@ -49,6 +61,7 @@ Estes métodos são usados para alterar elementos no array ou criar novos arrays
 
 - **`filter()`**:
   - Cria um **novo array** contendo apenas os elementos que satisfazem a condição fornecida.
+
   ```javascript
   const evenNumbers = numbers.filter(num => num % 2 === 0);
   console.log(evenNumbers); // [2]
@@ -56,6 +69,7 @@ Estes métodos são usados para alterar elementos no array ou criar novos arrays
 
 - **`reduce()`**:
   - Acumula os valores do array em um único valor, aplicando uma função a cada elemento.
+
   ```javascript
   const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   console.log(sum); // 6
@@ -63,6 +77,7 @@ Estes métodos são usados para alterar elementos no array ou criar novos arrays
 
 - **`flat()`**:
   - Cria um **novo array** com todos os sub-arrays concatenados, podendo ser especificado o nível de profundidade.
+
   ```javascript
   const nestedArray = [1, [2, 3], [4, [5]]];
   console.log(nestedArray.flat(2)); // [1, 2, 3, 4, 5]
@@ -70,6 +85,7 @@ Estes métodos são usados para alterar elementos no array ou criar novos arrays
 
 - **`flatMap()`**:
   - Aplica uma função a cada elemento e em seguida "achata" o resultado em um array de profundidade um.
+
   ```javascript
   const words = ["Hello world", "Welcome"];
   const result = words.flatMap(word => word.split(" "));
@@ -77,10 +93,12 @@ Estes métodos são usados para alterar elementos no array ou criar novos arrays
   ```
 
 ### 3. **Métodos de Inserção, Remoção e Alteração de Itens**
+
 Estes métodos alteram diretamente o array original (ou seja, são métodos **mutáveis**).
 
 - **`push()`**:
   - Adiciona um ou mais elementos ao **final do array** e retorna o novo comprimento.
+
   ```javascript
   const fruits = ['apple'];
   fruits.push('banana');
@@ -89,6 +107,7 @@ Estes métodos alteram diretamente o array original (ou seja, são métodos **mu
 
 - **`pop()`**:
   - Remove o **último elemento** do array e retorna o elemento removido.
+
   ```javascript
   fruits.pop();
   console.log(fruits); // ['apple']
@@ -96,6 +115,7 @@ Estes métodos alteram diretamente o array original (ou seja, são métodos **mu
 
 - **`shift()`**:
   - Remove o **primeiro elemento** do array e retorna o elemento removido.
+
   ```javascript
   fruits.shift();
   console.log(fruits); // []
@@ -103,6 +123,7 @@ Estes métodos alteram diretamente o array original (ou seja, são métodos **mu
 
 - **`unshift()`**:
   - Adiciona um ou mais elementos ao **início do array** e retorna o novo comprimento.
+
   ```javascript
   fruits.unshift('grape');
   console.log(fruits); // ['grape']
@@ -110,6 +131,7 @@ Estes métodos alteram diretamente o array original (ou seja, são métodos **mu
 
 - **`splice()`**:
   - Adiciona, remove ou substitui elementos em um array em uma **posição específica**.
+
   ```javascript
   const items = ['item1', 'item2', 'item3'];
   items.splice(1, 1, 'newItem');
@@ -117,10 +139,12 @@ Estes métodos alteram diretamente o array original (ou seja, são métodos **mu
   ```
 
 ### 4. **Métodos de Ordenação e Reorganização**
+
 Estes métodos são usados para ordenar ou reorganizar os elementos do array.
 
 - **`sort()`**:
   - Ordena os elementos do array **modificando-o diretamente**.
+
   ```javascript
   const numbers = [5, 3, 8, 1];
   numbers.sort((a, b) => a - b);
@@ -129,6 +153,7 @@ Estes métodos são usados para ordenar ou reorganizar os elementos do array.
 
 - **`reverse()`**:
   - Inverte a ordem dos elementos do array **mutando o array original**.
+
   ```javascript
   const letters = ['a', 'b', 'c'];
   letters.reverse();
@@ -136,19 +161,23 @@ Estes métodos são usados para ordenar ou reorganizar os elementos do array.
   ```
 
 ### 5. **Métodos de Iteração**
+
 Estes métodos são usados para iterar sobre cada elemento do array.
 
 - **`forEach()`**:
   - Executa uma função fornecida uma vez para **cada elemento** do array.
+
   ```javascript
   numbers.forEach(num => console.log(num));
   ```
 
 ### 6. **Métodos de Conversão**
+
 Estes métodos são usados para criar representações alternativas do array.
 
 - **`join()`**:
   - Junta todos os elementos do array em uma **string**, usando um separador especificado.
+
   ```javascript
   const words = ['Hello', 'World'];
   console.log(words.join(' ')); // "Hello World"
@@ -156,6 +185,7 @@ Estes métodos são usados para criar representações alternativas do array.
 
 - **`concat()`**:
   - Combina dois ou mais arrays, retornando um **novo array**.
+
   ```javascript
   const arr1 = [1, 2];
   const arr2 = [3, 4];
@@ -163,7 +193,8 @@ Estes métodos são usados para criar representações alternativas do array.
   console.log(combined); // [1, 2, 3, 4]
   ```
 
-### Resumo dos Melhores Métodos:
+### Resumo dos Melhores Métodos
+
 - Para **buscar/verificar** elementos: `includes()`, `some()`, `every()`, `find()`, `findIndex()`.
 - Para **transformar** arrays: `map()`, `filter()`, `reduce()`, `flat()`, `flatMap()`.
 - Para **alterar diretamente**: `push()`, `pop()`, `splice()`, `shift()`, `unshift()`.
@@ -171,10 +202,12 @@ Estes métodos são usados para criar representações alternativas do array.
 - Para **percorrer elementos**: `forEach()`.
 - Para **converter para outros formatos**: `join()`, `concat()`.
 
-### O que é `switch`?
+## O que é `switch`?
+
 O **`switch`** é uma **estrutura condicional** em JavaScript que permite escolher entre várias opções possíveis, com base no valor de uma expressão. Ele é uma alternativa ao uso repetitivo de **`if-else`**, sendo mais conveniente e legível quando você tem **múltiplas comparações** para realizar.
 
-#### Sintaxe Básica do `switch`:
+### Sintaxe Básica do `switch`
+
 ```javascript
 switch (expressão) {
   case valor1:
@@ -188,12 +221,14 @@ switch (expressão) {
     break;
 }
 ```
+
 - **`expressão`**: Esta é a expressão cujo valor será comparado com os valores dos `cases`.
 - **`case valor1:`**: Cada `case` é uma comparação do valor da expressão. Se for igual a `valor1`, o bloco correspondente é executado.
 - **`break`**: O `break` é usado para **encerrar a execução** do bloco atual e sair do `switch`. Sem o `break`, a execução continuará para os próximos `cases` (comportamento conhecido como **fall-through**).
 - **`default:`**: O `default` é executado se **nenhum dos `cases` corresponder** ao valor da expressão. É opcional, mas geralmente é uma boa prática incluí-lo.
 
-### Exemplo Básico:
+## Exemplo Básico
+
 ```javascript
 const fruit = "banana";
 
@@ -211,15 +246,18 @@ switch (fruit) {
     console.log("Fruta desconhecida.");
 }
 ```
+
 - O valor de `fruit` é `"banana"`.
 - O `switch` verifica cada `case` até encontrar uma correspondência.
 - Quando `case "banana":` é encontrado, ele imprime **"Você escolheu banana!"**.
 - **`break`** impede que o `switch` continue executando os próximos `cases`.
 
-### Comportamento do Fall-Through
+## Comportamento do Fall-Through
+
 O `switch` tem um comportamento chamado **fall-through**, que acontece quando você **não usa `break`** ao final de um `case`. Isso faz com que o código continue executando **os próximos `cases`**, independentemente da condição original.
 
-#### Exemplo com Fall-Through:
+### Exemplo com Fall-Through
+
 ```javascript
 const day = "monday";
 
@@ -235,21 +273,26 @@ switch (day) {
     console.log("Outro dia");
 }
 ```
+
 - Como não há `break` após `"monday"`, o código continua executando **todas as instruções subsequentes**.
 - **Saída**:
+
   ```
   Hoje é segunda-feira
   Hoje é terça-feira
   Hoje é quarta-feira
   ```
 
-### Uso Adequado do `break`
+## Uso Adequado do `break`
+
 Para evitar a execução indesejada dos próximos `cases`, sempre use o **`break`** após cada `case`. Sem o `break`, o JavaScript executará **todos os `cases` subsequentes**, mesmo que a comparação inicial já tenha sido feita.
 
-### `default` - O Caso Padrão
+## `default` - O Caso Padrão
+
 O **`default`** é um bloco que será executado quando **nenhum dos `cases` coincidir** com o valor da expressão. É semelhante ao `else` em um bloco `if-else`.
 
-#### Exemplo com `default`:
+### Exemplo com `default`
+
 ```javascript
 const animal = "gato";
 
@@ -264,12 +307,15 @@ switch (animal) {
     console.log("Animal não identificado");
 }
 ```
+
 - Como `"gato"` não corresponde a nenhum `case`, o bloco `default` é executado, imprimindo **"Animal não identificado"**.
 
-### Uso do `switch` com Tipos de Dados Diferentes
+## Uso do `switch` com Tipos de Dados Diferentes
+
 O `switch` em JavaScript funciona melhor com **valores primitivos**, como **strings** e **números**. A comparação realizada no `switch` é **estritamente igual (`===`)**, ou seja, o valor e o tipo devem ser iguais.
 
-#### Exemplo com Tipos Diferentes:
+### Exemplo com Tipos Diferentes
+
 ```javascript
 const value = "5";
 
@@ -284,16 +330,20 @@ switch (value) {
     console.log("Valor não encontrado");
 }
 ```
+
 - O `switch` diferencia entre **`5`** (número) e **`"5"`** (string).
 - Como `value` é **`"5"`** (string), ele corresponde ao segundo `case`.
 
-### Usos Práticos do `switch`
+## Usos Práticos do `switch`
+
 - **Verificar Múltiplas Opções Similares**: Se você tem várias condições possíveis para um valor (como tipos de fruta, dias da semana, tipos de usuários), `switch` é uma maneira conveniente de organizar essas verificações.
 - **Facilitar a Leitura e Manutenção**: Em comparação a múltiplos `if-else`, o `switch` torna o código mais **legível** e **fácil de manter**, especialmente quando há muitos `cases`.
 
-### Comparação com `if-else`
+## Comparação com `if-else`
+
 - O `switch` é útil quando se tem **múltiplos valores conhecidos** para comparar contra um valor específico.
 - **`if-else`** é mais flexível quando se lida com **condições complexas** ou **intervalos**, como:
+
   ```javascript
   const score = 85;
 
@@ -305,10 +355,13 @@ switch (value) {
     console.log("Precisa melhorar");
   }
   ```
+
   - Neste caso, o `switch` não é ideal, pois não consegue lidar bem com intervalos numéricos sem ser redundante.
 
-### Usando `switch (true)` para Condições Complexas
+## Usando `switch (true)` para Condições Complexas
+
 O `switch` normalmente compara valores, mas há um truque para utilizá-lo com **expressões booleanas**:
+
 ```javascript
 const age = 25;
 
@@ -326,9 +379,11 @@ switch (true) {
     console.log("Idade inválida");
 }
 ```
+
 - Nesse exemplo, **`switch (true)`** é usado para fazer comparações que retornam **valores booleanos**, similar ao uso de `if-else`.
 
-### Boas Práticas com `switch`
+## Boas Práticas com `switch`
+
 1. **Sempre Use `break` (ou `return`)**:
    - Evite erros indesejados devido ao comportamento de **fall-through**.
 2. **Inclua um `default`**:
@@ -337,7 +392,8 @@ switch (true) {
    - Se você está lidando com um número fixo de possíveis opções, `switch` é uma boa escolha.
    - Se precisar de **verificações complexas ou intervalos**, `if-else` é mais adequado.
 
-### Resumo
+## Resumo
+
 - **Estrutura do `switch`**: Comparação de um valor com múltiplos `cases` possíveis.
 - **`break`**: Evita o comportamento de **fall-through**.
 - **`default`**: Opcional, mas recomendado para lidar com valores inesperados.
